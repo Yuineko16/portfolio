@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+body{
+  font-family: "Yu Gothic Medium", "游ゴシック Medium",Yu Gothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+  line-height: 1.7;
+  color: #000
+}
+a{
+  text-decoration: none;
+}
+/*header
+-------------------------------------------------------------------------------*/
+.logo{
+  width:100px;
+  margin-left: 45px;
+}
+
+.page-header{
+  display:flex;
+  justify-content: space-between;
+  background-color: #000;
+  height: 100px;
+}
+
+.main-nav{
+  display:flex;               /*メニューを横並びに表示*/
+  font-size: 1.25rem;
+  text-transform: uppercase;  /*すべての文字を大文字にする*/
+  margin-top: 20px;
+  margin-right: 60px;
+  list-style: none;           /*リストの先頭のマーカーを無くす*/
+}
+
+.main-nav li{
+  margin-left:36px;
+}
+
+.main-nav a{
+  color:#fff;
+  font-family: "Agency FB";
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+#top .main-nav a:hover{
+  color:#ff2599;
+}
+#works .main-nav a:hover{
+  color:#009bc6;
+}
+#blog .main-nav a:hover{
+  color:#ef7c21;
+}
+
+/*footer
+-------------------------------------------------------------------------------*/
+.page-footer{
+  margin-top: 200px;
+  height: 50px;
+  width: 100%;
+  background: #000;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.page-footer p{
+  font-family: 'Philosopher',serif;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+
+/*メイン画像
+-------------------------------------------------------------------------------*/
+.main{
+  height: 220px;
+}
+
+.main-pic{
+  height: 400px;
+  width: 100%;
+}
+
+#top .main-pic{
+  background-image: url(../images/top.png),linear-gradient(#ff006f,#f7c6bd);
+  background-blend-mode: hard-light;
+}
+#works .main-pic{
+  background-image: url(../images/works.png),linear-gradient(#4699ca,#f9e900);
+  background-blend-mode: hard-light;
+}
+#blog .main-pic{
+  background-image: url(../images/blog.png),linear-gradient(#f0821e,#fff000);
+  background-blend-mode: hard-light;
+}
+
+
+.main-word{
+  font-family: 'Haettenschweiler';
+  font-size: 180px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+/*本文
+-------------------------------------------------------------------------------*/
+.topic{
+  margin-bottom: 100px;
+}
+
+.topic-title{
+  font-family: "Agency FB";
+  font-size: 80px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.plofile{
+  display: flex;  /*flexboxの指定*/
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.icon{
+  height: 200px;
+}
+
+.plofile-name{
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.plofile-body{
+  margin-left: 80px;
+}
+.plofile-myinfo{
+    display: flex;  /*flexboxの指定*/
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
