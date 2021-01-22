@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <meta charset="utf-8">
+    <title>H.Y. -北條結衣のポートフォリオ-</title>
+    <meta name="description" content="北條結衣のポートフォリオ">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!--CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+
+
+  <body id="works">
+    <!--ヘッダー ここから-->
+    <header class="page-header">
+        <h1><a href="index.html"><img class="logo" src="images/logo_wh.png" alt="logo"></a></h1>
+        <nav>
+          <ul class="main-nav">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="works.html">WORKS</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+    </header><!--ヘッダー ここまで-->
+
+    <!--メイン画像 ここから-->
+    <div class="main">
+      <div class="main-pic">
+      </div>
+    </div>
+    <h1 class="main-word">WORKS.</h1>
+    <!--メイン画像 ここまで-->
+
+    <div class="topic">
+      <h2 class="topic-title">WORKS</h2>
+      <div class="plofile">
+
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div>
+        <p><small>&copy;2021 Yui Hojo</small></p>
+      </div>
+    </footer>
+
+
+  </body>
