@@ -1,4 +1,13 @@
 @charset "UTF-8";
+@font-face {
+	font-family: 'Haettenschweiler';
+	src: url(../fonts/HATTEN.TTF);
+}
+@font-face {
+	font-family: 'Agency FB';
+	src: url(../fonts/AGENCYR.TTF);
+}
+
 
 body{
   font-family: "Yu Gothic Medium", "游ゴシック Medium",Yu Gothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
@@ -8,10 +17,17 @@ body{
 a{
   text-decoration: none;
 }
+
+.wrapper{
+  /*max-width: 1600px;*/
+  margin: 0 auto;           /*中央に配置*/
+  padding: 0 4%;            /*スマホ向けの余白の設定*/
+}
+
 /*header
 -------------------------------------------------------------------------------*/
 .logo{
-  width:100px;
+  width:60px;
   margin-left: 45px;
 }
 
@@ -19,15 +35,14 @@ a{
   display:flex;
   justify-content: space-between;
   background-color: #000;
-  height: 100px;
+  height: 60px;
 }
 
 .main-nav{
   display:flex;               /*メニューを横並びに表示*/
-  font-size: 1.25rem;
   text-transform: uppercase;  /*すべての文字を大文字にする*/
-  margin-top: 20px;
   margin-right: 60px;
+  margin-top: 10px;
   list-style: none;           /*リストの先頭のマーカーを無くす*/
 }
 
@@ -38,7 +53,7 @@ a{
 .main-nav a{
   color:#fff;
   font-family: "Agency FB";
-  font-size: 40px;
+  font-size: 30px;
   margin-right: 20px;
 }
 
@@ -100,17 +115,19 @@ a{
   font-size: 180px;
   text-align: right;
   margin-right: 20px;
+  letter-spacing: 0.3rem;
 }
 
 /*本文
 -------------------------------------------------------------------------------*/
 .topic{
+  margin-top: 40px;
   margin-bottom: 100px;
 }
 
 .topic-title{
   font-family: "Agency FB";
-  font-size: 80px;
+  font-size: 60px;
   text-align: center;
   text-decoration: underline;
 }
@@ -123,15 +140,16 @@ a{
 }
 
 .icon{
-  height: 200px;
+  height: 150px;
 }
 
 .plofile-name{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   margin-right: 20px;
 }
 .plofile-body{
+  font-size: 15px;
   margin-left: 80px;
 }
 .plofile-myinfo{
@@ -139,4 +157,86 @@ a{
     margin-bottom: 10px;
     justify-content: flex-start;
     align-items: center;
+}
+
+/*メディアクエリ
+-------------------------------------------------------------------------------*/
+/*スマホ用配置*/
+@media screen and (max-width: 800px){
+
+  /*HEADER*/
+  .logo{
+    margin-top: 10px;
+    width: 50px;
+    margin-left: 20px;
+  }
+  .main-nav{
+    align-items: center;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+  .main-nav a{
+    font-size: 25px;
+  }
+  .main-nav li{
+    margin-top: 0px;
+  }
+  .page-header{
+    flex-direction: column; /*flexboxで縦並びに*/
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+
+  /*main*/
+  .main{
+    height: 50px;
+  }
+  .main-pic{
+    height: 120px;
+    width: 100%;
+  }
+  .main-word{
+    font-size: 80px;
+    margin-right: 10px;
+    letter-spacing: 0.3rem;
+  }
+
+  /*topic*/
+  .topic{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .topic-title{
+    font-family: "Agency FB";
+    font-size: 35px;
+  }
+
+  .plofile{
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .icon{
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .plofile-name{
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .plofile-body{
+    font-size: 12px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .plofile-myinfo{
+      flex-direction: column;
+  }
+
+
 }
