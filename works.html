@@ -1,52 +1,120 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
 
-    <meta charset="utf-8">
-    <title>H.Y. -北條結衣のポートフォリオ-</title>
-    <meta name="description" content="北條結衣のポートフォリオ">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+
+  <meta charset="utf-8">
+  <title>WORKS</title>
+  <meta name="description" content="北條結衣のポートフォリオ">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="images/logo_bl.png" href="images/logo_bl.png">
   <!--CSS-->
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--js-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 
-  </head>
+</head>
+
+<!--読み込み画面(SpinKitより)-->
+<div id="loader">
+  <div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+</div>
+
+<body id="works">
+  <!--ヘッダー ここから-->
+  <header class="page-header">
+    <h1><a href="index.html"><img class="logo" src="images/logo_wh.png" alt="logo"></a></h1>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="index.html">home</a></li>
+        <li><a href="works.html">works</a></li>
+        <li><a href="blog.html">blog</a></li>
+      </ul>
+    </nav>
+    <div class="menu-buttonPos">
+      <button>
+        <div class="menu-button"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </header>
+  <!--ヘッダー ここまで-->
+
+  <nav>
+    <ul class="main-nav">
+      <li><a href="index.html">home</a></li>
+      <li><a href="works.html">works</a></li>
+      <li><a href="blog.html">blog</a></li>
+    </ul>
+  </nav>
 
 
-  <body id="works">
-    <!--ヘッダー ここから-->
-    <header class="page-header">
-        <h1><a href="index.html"><img class="logo" src="images/logo_wh.png" alt="logo"></a></h1>
-        <nav>
-          <ul class="main-nav">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="works.html">WORKS</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-          </ul>
-        </nav>
-    </header><!--ヘッダー ここまで-->
-
+  <div class="main-content">
     <!--メイン画像 ここから-->
     <div class="main">
       <div class="main-pic">
       </div>
     </div>
-    <h1 class="main-word">WORKS.</h1>
+    <h1 class="main-word">works.</h1>
     <!--メイン画像 ここまで-->
 
-    <div class="topic">
-      <h2 class="topic-title">WORKS</h2>
-      <div class="plofile">
 
-      </div>
+    <div class="srround" id="works-link">
+      <h2 class="topic-title"><a href="#website">website</a></h2>
+
+      <h2 class="topic-title"><a href="#game">game</a></h2>
+
+      <h2 class="topic-title"><a href="#processing">processing</a></h2>
+
+      <h2 class="topic-title"><a href="#line_sticker">line sticker</a></h2>
+    </div>
+  </div>
+
+  <section id="website">
+  <div class="topic">
+    <h2 class="topic-title">website</h2>
+    <div class="topic">
+      <img src="images/HP01.png" alt="website1">
     </div>
 
-    <footer class="page-footer">
-      <div>
-        <p><small>&copy;2021 Yui Hojo</small></p>
-      </div>
-    </footer>
+  </div>
+  </section>
+
+  <section id="game">
+  <div class="topic">
+    <h2 class="topic-title">game</h2>
+
+  </div>
+  </section>
+
+  <section id="processing">
+  <div class="topic">
+    <h2 class="topic-title">processing</h2>
+
+  </div>
+  </section>
+
+  <section id="line_sticker">
+  <div class="topic">
+    <h2 class="topic-title">line sticker</h2>
+
+  </div>
+  </section>
 
 
-  </body>
+  <footer class="page-footer">
+    <div>
+      <p><small>&copy;2021 Yui Hojo</small></p>
+    </div>
+  </footer>
+
+
+</body>
