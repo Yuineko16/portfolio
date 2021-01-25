@@ -54,6 +54,8 @@ a{
 
 #loader.loaded{
   animation: fadeOut 1s forwards;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .spinner {
