@@ -41,9 +41,10 @@ $(function(){
 
      /*-----------------------------------------------------------------------
     読み込み画面の非表示*/  
-    window.onload = ()=>{
+    window.onload = function(){
         const loader = document.getElementById('loader');
         loader.classList.add('loaded');
+        $('loader').fadeOut(1000);
     }
 
      /*-----------------------------------------------------------------------
