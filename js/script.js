@@ -40,12 +40,11 @@ $(function(){
     });
 
      /*-----------------------------------------------------------------------
-    読み込み画面の非表示*/  
-    window.onload = function(){
+    読み込み画面の非表示*/
+    window.addEventListener('load', function(){
         const loader = document.getElementById('loader');
         loader.classList.add('loaded');
-        $('loader').fadeOut(1000);
-    }
+    });
 
      /*-----------------------------------------------------------------------
     ページのスクロール(works)*/  
