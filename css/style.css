@@ -15,56 +15,266 @@ body{
   color: #000
 }
 a{
+	color: #666;
   text-decoration: none;
 }
-
-.wrapper{
-  /*max-width: 1600px;*/
-  margin: 0 auto;           /*中央に配置*/
-  padding: 0 4%;            /*スマホ向けの余白の設定*/
+#top a:hover{
+  color:#ff2599;
 }
+#works a:hover{
+  color:#009bc6;
+}
+#blog a:hover{
+  color:#ef7c21;
+}
+#contact a:hover{
+  color:#1bca47;
+}
+
+/*読み込み画面
+-------------------------------------------------------------------------------*/
+@keyframes fadeOut{
+  from{
+    opacity: 1;
+  }
+  to{
+    display: none;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#loader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: #000;
+}
+
+#loader.loaded{
+  animation: fadeOut 1s forwards;
+}
+
+.spinner {
+  margin: 400px auto;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.spinner > div {
+  background-color: #fff;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+/*スライドメニュー(画面幅が800pxより大きい時使用)
+-------------------------------------------------------------------------------*/
+.main-nav{
+  background: #000;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  width: 300px;
+  margin-left: -300px;
+  padding-top: 40px;
+  text-transform: uppercase;
+}
+
+.main-nav a{
+  color: #fff;
+  font-family: "Agency FB";
+  font-size: 40px;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+/*グローバルナビゲーション(画面幅が800px以下の時使用)
+-------------------------------------------------------------------------------*/
+#g-nav{
+  /*positionはfixedで最背面へ*/
+  position:fixed;
+  z-index: -1;
+  opacity: 0;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  background:rgba(12, 12, 12, 0.7);
+  transition: all 0.3s; /*動き用*/
+}
+
+/*activeのとき、透過なしで最前面へ*/
+#g-nav.panelactive{
+  opacity: 1;
+  z-index:990;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  display: none;
+  position: absolute;
+  z-index: 990;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+#g-nav.panelactive ul {
+  display: block;
+}
+
+#g-nav li{
+  list-style: none;
+  text-align: center; 
+}
+
+#g-nav li a{
+  color: #fff;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/*ハンバーガーメニュー
+-------------------------------------------------------------------------------*/
+/*ボタン外側*/
+.menu-button{
+	position: relative;
+	background:#000;
+	cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+/*ボタン内側*/
+.menu-button span{
+  display: inline-block;
+  transition: all .4s;/*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+	background: #fff;
+  width: 45%;
+  z-index: 9999;
+}
+
+.menu-button span:nth-of-type(1) {
+	top:15px;	
+}
+
+.menu-button span:nth-of-type(2) {
+	top:23px;
+}
+
+.menu-button span:nth-of-type(3) {
+	top:31px;
+}
+
+/*activeクラスが付与されると1・3番目の要素が2番目の要素と同じ位置になり一本線に変化*/
+.menu-button.active span:nth-of-type(1) ,
+.menu-button.active span:nth-of-type(3){
+    top: 23px;
+}
+
 
 /*header
 -------------------------------------------------------------------------------*/
 .logo{
   width:60px;
   margin-left: 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header{
+  position: fixed;
+  width: 100%;
 }
 
 .page-header{
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   background-color: #000;
   height: 60px;
 }
 
-.main-nav{
+.header-nav{
   display:flex;               /*メニューを横並びに表示*/
   text-transform: uppercase;  /*すべての文字を大文字にする*/
-  margin-right: 60px;
-  margin-top: 10px;
+  margin-right: 30px;
   list-style: none;           /*リストの先頭のマーカーを無くす*/
 }
 
-.main-nav li{
+.header-nav li{
   margin-left:36px;
 }
 
-.main-nav a{
-  color:#fff;
+.header-nav a{
+  color: #fff;
   font-family: "Agency FB";
-  font-size: 30px;
-  margin-right: 20px;
+  font-size: 35px;
+  margin-left: 20px;
 }
 
-#top .main-nav a:hover{
+#top .header-nav a:hover{
   color:#ff2599;
 }
-#works .main-nav a:hover{
+#works .header-nav a:hover{
   color:#009bc6;
 }
-#blog .main-nav a:hover{
+#blog .header-nav a:hover{
   color:#ef7c21;
+}
+#contact .header-nav a:hover{
+  color:#1bca47;
 }
 
 /*footer
@@ -88,12 +298,11 @@ a{
 /*メイン画像
 -------------------------------------------------------------------------------*/
 .main{
-  height: 220px;
+  height: 130px;
 }
 
 .main-pic{
-  height: 400px;
-  width: 100%;
+  height: 300px;
 }
 
 #top .main-pic{
@@ -108,17 +317,22 @@ a{
   background-image: url(../images/blog.png),linear-gradient(#f0821e,#fff000);
   background-blend-mode: hard-light;
 }
+#contact .main-pic{
+  background-image: url(../images/blog.png),linear-gradient(#1bca47,#92c8dd);
+  background-blend-mode: hard-light;
+}
 
 
 .main-word{
   font-family: 'Haettenschweiler';
+  text-transform: uppercase;  /*すべての文字を大文字にする*/
   font-size: 180px;
   text-align: right;
   margin-right: 20px;
   letter-spacing: 0.3rem;
 }
 
-/*本文
+/*トップ本文
 -------------------------------------------------------------------------------*/
 .topic{
   margin-top: 40px;
@@ -127,6 +341,7 @@ a{
 
 .topic-title{
   font-family: "Agency FB";
+  text-transform: uppercase;  /*すべての文字を大文字にする*/
   font-size: 60px;
   text-align: center;
   text-decoration: underline;
@@ -140,7 +355,8 @@ a{
 }
 
 .icon{
-  height: 150px;
+  height: 250px;
+	border-radius: 50%;
 }
 
 .plofile-name{
@@ -150,7 +366,7 @@ a{
 }
 .plofile-body{
   font-size: 15px;
-  margin-left: 80px;
+  margin-left: 50px;
 }
 .plofile-myinfo{
     display: flex;  /*flexboxの指定*/
@@ -159,33 +375,113 @@ a{
     align-items: center;
 }
 
+/*ワークス
+-------------------------------------------------------------------------------*/
+.srround{
+	width: 600px;
+	margin: 0 auto 120px;
+  border: 5px solid #000;
+  padding: 30px 0 40px;
+}
+
+
+
+/*ブログ
+-------------------------------------------------------------------------------*/
+.blog-contents{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:100px;
+}
+
+/*記事本文*/
+article{
+	width: 76%
+}
+/*サイドバー*/
+aside{
+	width:24%
+}
+
+/*投稿内容*/
+.post-info{
+	position: relative;
+	padding-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	padding: 10px 0;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+}
+
+.post-date{
+	margin-left: 20px;
+
+	background: #000;
+	color: #fff;
+	width: 80px;
+	height: 80px;
+	font-size: 20px;
+	text-align: center;
+
+	position: absolute;
+	top: 0;
+	padding-top: 10px;
+}
+
+.post-date span{
+	font-size: 20px;
+	border-top: 3px #fff dashed;
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.post-title,
+.post-cat{
+	margin-left: 110px;
+}
+
 /*メディアクエリ
 -------------------------------------------------------------------------------*/
 /*スマホ用配置*/
 @media screen and (max-width: 800px){
 
   /*HEADER*/
+  header{
+    position: static;
+  }
+
   .logo{
+    position: static;
     margin-top: 10px;
     width: 50px;
     margin-left: 20px;
   }
-  .main-nav{
+  .header-nav{
+    justify-content: center;
     align-items: center;
-    margin-top: 0px;
-    margin-right: 0px;
+    margin: 0 auto;
   }
-  .main-nav a{
+  .header-nav a{
     font-size: 25px;
   }
-  .main-nav li{
-    margin-top: 0px;
+  .header-nav li{
+    margin: 0 15px 20px;
   }
   .page-header{
     flex-direction: column; /*flexboxで縦並びに*/
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
+    margin: 0;
     height: 150px;
+  }
+
+  .menu-buttonPos{
+    position: fixed;
+    top: 10px;
+    right: 15px;
   }
 
   /*main*/
@@ -199,7 +495,7 @@ a{
   .main-word{
     font-size: 80px;
     margin-right: 10px;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
   }
 
   /*topic*/
@@ -210,16 +506,23 @@ a{
 
   .topic-title{
     font-family: "Agency FB";
-    font-size: 35px;
+    font-size: 40px;
   }
 
+  /*works*/
+  .srround{
+    width: 300px;
+    border: 3px solid #000;
+  }
+
+  /*plofile*/
   .plofile{
     flex-direction: column;
     margin-top: 10px;
   }
 
   .icon{
-    height: 100px;
+    height: 150px;
     margin-bottom: 10px;
   }
 
