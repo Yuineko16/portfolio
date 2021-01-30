@@ -37,6 +37,13 @@
   </header>
   <!--ヘッダー ここまで-->
 
+  <!--読み込み画面 ここから-->
+  <div class="loader-wrapper">
+    <div class="loader">Loading...</div>
+  </div>
+  <!--読み込み画面 ここから-->
+
+  <!--メニュー ここから-->
   <nav>
     <ul class="main-nav">
       <li><a href="index.html">home</a></li>
@@ -44,7 +51,7 @@
       <li><a href="blog.html">blog</a></li>
     </ul>
   </nav>
-
+  <!--メニュー ここまで-->
 
   <div class="main-content">
     <!--メイン画像 ここから-->
@@ -55,7 +62,7 @@
     <h1 class="main-word">works.</h1>
     <!--メイン画像 ここまで-->
 
-
+    <!--目次 ここから-->
     <div class="index" id="link">
       <ul>
         <li>
@@ -69,9 +76,11 @@
         </li>
       </ul>
     </div>
+    <!--目次 ここまで-->
 
     <div class="blank"></div>
 
+    <!--内容 ここから-->
     <section id="website">
       <h2>website</h2>
       <div class="topic">
@@ -79,18 +88,20 @@
         <div class="works-content">
           <h3 class="works-title">Saito Akira`s Gallery</h3>
           <div class="img-works-gr">
-            <img src="images/web01.png"  alt="website01" class="img-web01 img-works">
-            <img src="images/web02.png"   alt="website02" class="img-web02 img-works">
+            <img src="images/web01.png" alt="website01" class="img-web01 img-works">
+            <img src="images/web02.png" alt="website02" class="img-web02 img-works">
           </div>
           <p>美大に所属している友人のホームページをWordPressで制作しました。<br>
             作品を目立たせたかったので,白を基調にしたシンプルなデザインにしました。<br>
             プロフィールのページはPCの時とスマホの時でレイアウトが変わるように,<br>
             flexboxを用いて実装しました。</p>
 
-          <p><a href=http://saitoakira.starfree.jp>実際のページはこちら</a>(外部サイトに飛びます)</p>
+          <p><br><strong><a href=http://saitoakira.starfree.jp>実際のページはこちら</a></strong>(外部サイトに飛びます)</p>
         </div>
       </div>
     </section>
+
+    <div class="blank"></div>
 
     <section id="game">
       <h2>game</h2>
@@ -98,14 +109,14 @@
         <div class="works-content">
           <h3 class="works-title">びらくば</h3>
           <div class="img-works-gr">
-            <img src="images/game01.png"  alt="game01" class="img-game01 img-works">
+            <img src="images/game01.png" alt="game01" class="img-game01 img-works">
           </div>
           <p>Unityを用いて,ビラを配った枚数を競う2Dゲームを開発しました。<br>
             コロナ禍で大学のサークルのビラ配りが無くなってしまったので,<br>
             代わりに配れるところがあればと思い,制作しました。<br>
             制作期間は2ヶ月間です。
           </p>
-          <p><a href=###>こちらで遊べます</a>(音が出ますので,ご注意ください)</p>
+          <p><br><strong><a href=###>こちらで遊べます</a></strong>(音が出ますので,ご注意ください)</p>
         </div>
       </div>
 
@@ -120,26 +131,26 @@
             代わりに配れるところがあればと思い,制作しました。<br>
             制作期間は2ヶ月間です。
           </p>
-          <p><a href=###>こちらで遊べます</a>(音が出ますので,ご注意ください)</p>
+          <p><strong><a href=###>こちらで遊べます</a></strong>(音が出ますので,ご注意ください)</p>
         </div>
       </div>
 
     </section>
 
+    <div class="blank"></div>
+
     <section id="other">
       <h2>other</h2>
       <div class="topic">
         <div class="works-content">
-          <h3 class="works-title">processing</h3>
+          <h3 class="works-title">Processing</h3>
           <div class="img-works-gr">
-            <img src="images/proc01.png" alt="processing01" class="img-proc01 img-works">
+            <img src="images/proc01.png" alt="processing01" class="img-other01 img-works">
           </div>
-          <p>Unityを用いて,ビラを配った枚数を競う2Dゲームを開発しました。<br>
-            コロナ禍で大学のサークルのビラ配りが無くなってしまったので,<br>
-            代わりに配れるところがあればと思い,制作しました。<br>
-            制作期間は2ヶ月間です。
+          <p>JavaScriptの勉強とデジタルアートへの興味から,<br>
+            Open Processingで作品を制作し公開しています。<br>
           </p>
-          <p><a href=###>こちらで遊べます</a>(音が出ますので,ご注意ください)</p>
+          <p><br><strong><a href=https://www.openprocessing.org/user/258324>OpenProcessingへ</a></strong></p>
         </div>
       </div>
 
@@ -147,24 +158,25 @@
         <div class="works-content">
           <h3 class="works-title">LINE sticker</h3>
           <div class="img-works-gr">
-            <img src="images/proc02.png" alt="processing01" class="img-proc01 img-works">
+            <img src="images/line01.png" alt="line-sticker" class="img-other02 img-works">
           </div>
-          <p>Unityを用いて,ビラを配った枚数を競う2Dゲームを開発しました。<br>
-            コロナ禍で大学のサークルのビラ配りが無くなってしまったので,<br>
-            代わりに配れるところがあればと思い,制作しました。<br>
-            制作期間は2ヶ月間です。
+          <p>趣味のデジタルイラスト制作を生かして,<br>
+            所属しているサークルのLINEスタンプを制作しました。<br>
+            サークルで共通して皆プログラミングやゲームが趣味なので,<br>
+            そういった方が使いたいと思うようなスタンプを目指しました。<br>
+            制作期間は3週間です。
           </p>
-          <p><a href=###>こちらで遊べます</a>(音が出ますので,ご注意ください)</p>
         </div>
       </div>
   </div>
+  <!--内容 ここまで-->
 
-
+  <!--フッター ここから-->
   <footer class="page-footer">
     <div>
       <p><small>&copy;2021 Yui Hojo</small></p>
     </div>
   </footer>
-
+  <!--フッター ここまで-->
 
 </body>
