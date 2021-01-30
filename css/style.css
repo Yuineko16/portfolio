@@ -7,9 +7,17 @@
 	font-family: 'Agency FB';
 	src: url(../fonts/AGENCYR.TTF);
 }
+@font-face{
+  font-family: 'Noto Sans JP M';
+  src: url(../fonts/NotoSansJP-Medium.otf);
+}
+@font-face{
+  font-family: 'Noto Sans JP L';
+  src: url(../fonts/NotoSansJP-Light.otf);
+}
 
 body{
-  font-family: "Yu Gothic Medium", "游ゴシック Medium",Yu Gothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+  font-family: "Noto Sans JP","Yu Gothic Medium", "游ゴシック Medium",Yu Gothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
   line-height: 1.7;
   color: #000
 }
@@ -17,7 +25,20 @@ a{
 	color: #666;
   text-decoration: none;
 }
-#top a:hover{
+
+li{
+  list-style-type: none;
+}
+
+h2{
+  font-family: "Agency FB";
+  text-transform: uppercase;  /*すべての文字を大文字にする*/
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#home a:hover{
   color:#ff2599;
 }
 #works a:hover{
@@ -42,6 +63,7 @@ a{
   padding-top: 40px;
   text-transform: uppercase;
   z-index: 10;
+  opacity: 0.9;
 }
 
 .main-nav a{
@@ -71,7 +93,7 @@ a{
 /*ボタン内側*/
 .menu-button span{
   display: inline-block;
-  transition: all .4s;/*アニメーションの設定*/
+  transition: all .4s;  /*アニメーションの設定*/
   position: absolute;
   left: 14px;
   height: 3px;
@@ -95,7 +117,7 @@ a{
 /*activeクラスが付与されると1・3番目の要素が2番目の要素と同じ位置になり一本線に変化*/
 .menu-button.active span:nth-of-type(1) ,
 .menu-button.active span:nth-of-type(3){
-    top: 23px;
+  top: 23px;
 }
 
 
@@ -139,7 +161,7 @@ header{
   margin-left: 20px;
 }
 
-#top .header-nav a:hover{
+#home .header-nav a:hover{
   color:#ff2599;
 }
 #works .header-nav a:hover{
@@ -180,8 +202,8 @@ header{
   height: 300px;
 }
 
-#top .main-pic{
-  background-image: url(../images/top.png),linear-gradient(#ff006f,#f7c6bd);
+#home .main-pic{
+  background-image: url(../images/home.png),linear-gradient(#ff006f,#f7c6bd);
   background-blend-mode: hard-light;
 }
 #works .main-pic{
@@ -189,7 +211,7 @@ header{
   background-blend-mode: hard-light;
 }
 #blog .main-pic{
-  background-image: url(../images/blog.png),linear-gradient(#f0821e,#fff000);
+  background-image: url(../images/blog.png),linear-gradient(#e77000,#fdfacc);
   background-blend-mode: hard-light;
 }
 #contact .main-pic{
@@ -207,20 +229,20 @@ header{
   letter-spacing: 0.3rem;
 }
 
-/*トップ本文
+/*各ページ共通のもの
 -------------------------------------------------------------------------------*/
 .topic{
   margin-top: 40px;
   margin-bottom: 100px;
 }
 
-.topic-title{
-  font-family: "Agency FB";
-  text-transform: uppercase;  /*すべての文字を大文字にする*/
-  font-size: 60px;
-  text-align: center;
-  /*text-decoration: underline;*/
+.blank{
+  margin: 200px;
 }
+
+
+/*ホーム
+-------------------------------------------------------------------------------*/
 
 .plofile{
   display: flex;  /*flexboxの指定*/
@@ -250,14 +272,29 @@ header{
   align-items: center;
 }
 
+.top-content{
+  text-align: center;
+}
+
 /*ワークス
 -------------------------------------------------------------------------------*/
-.srround{
-	width: 600px;
+.index{
+	width: 450px;
 	margin: 0 auto 120px;
-  border-top: 5px solid #000;
-  border-bottom: 5px solid #000;
-  padding: 30px 0 40px;
+  padding: 10px 0;
+  border-top: 6px solid #000;
+  border-bottom: 6px solid #000;
+}
+.index a{
+  color: #000;
+  font-size: 50px;
+  font-family: "Agency FB";
+  text-transform: uppercase;  /*すべての文字を大文字にする*/
+  font-size: 50px;
+  font-weight: bold;
+}
+.index li{
+  text-align: center;
 }
 
 .img-works{
@@ -265,8 +302,30 @@ header{
   border-radius: 1.5%;
 }
 .img-works-gr{
-  margin: 30px auto 30px;
+  text-align: center;
+  margin: 40px auto 40px;
 }
+.works-content{
+  text-align: center;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.works-title{
+  text-align: left;
+  padding-left: 50px;
+}
+
+.img-web01{
+  width: 650px;
+}
+.img-web02{
+  width: 180px;
+}
+.img-game01{
+  width: 700px;
+}
+
 
 /*ブログ
 -------------------------------------------------------------------------------*/
@@ -326,8 +385,16 @@ aside{
 
 /*メディアクエリ
 -------------------------------------------------------------------------------*/
-/*スマホ用配置*/
+/*スマホ・タブレット用配置*/
 @media screen and (max-width: 900px){
+
+  p{
+    font-size: 12px;
+  }
+  h2{
+    font-size: 40px;
+  }
+
 
   /*HEADER------------------------------------*/
   header{
@@ -376,7 +443,7 @@ aside{
   
   .main-nav a{
     font-size: 50px;
-    margin-left: 40px;
+    margin-left: 45px;
     margin-top: 30px;
   }  
   
@@ -389,30 +456,50 @@ aside{
     height: 120px;
     width: 100%;
   }
+  #home .main-pic{
+    background-image: url(../images/home_mobile.png),linear-gradient(#ff006f,#f7c6bd);
+    background-blend-mode: hard-light;
+  }
+  #works .main-pic{
+    background-image: url(../images/works_mobile.png),linear-gradient(#1479b3,#83ffea);
+    background-blend-mode: hard-light;
+  }
+  #blog .main-pic{
+    background-image: url(../images/blog_mobile.png),linear-gradient(#e77000,#fdfacc);
+    background-blend-mode: hard-light;
+  }
   .main-word{
     font-size: 80px;
     margin-right: 10px;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.02rem;
   }
 
   /*topic----------------------------------------*/
   .topic{
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
   }
-
-  .topic-title{
-    font-family: "Agency FB";
-    font-size: 40px;
-  }
-
   /*works-----------------------------------------*/
-  .srround{
-    width: 300px;
+  .index{
+    width: 250px;
     border-top: 4px solid #000;
     border-bottom: 4px solid #000;
   }
 
+  .index a{
+    font-size: 45px;
+  }
+
+  .img-web01{
+    width: 60%;
+  }
+  .img-web02{
+    width: 20%;
+  }
+  .img-game01{
+    width: 80%;
+  }
+  
   /*plofile----------------------------------------*/
   .plofile{
     flex-direction: column;
@@ -431,11 +518,15 @@ aside{
     margin-bottom: 10px;
   }
   .plofile-body{
-    font-size: 12px;
     margin-left: 0;
     text-align: center;
   }
   .plofile-myinfo{
       flex-direction: column;
+  }
+
+  .works-content{
+    text-align: center;
+    width: 95%;
   }
 }
