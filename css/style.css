@@ -22,12 +22,12 @@ body{
   color: #000
 }
 a{
-	color: #666;
+	color: #000;
   text-decoration: none;
 }
 
 p{
-  font-size: 16px;
+  font-size: 18px;
 }
 
 li{
@@ -49,21 +49,9 @@ h3{
 
 strong{
   font-family: "Noto Sans JP M";
+  background: linear-gradient(transparent 85%, #ccc 80%);
 }
 
-
-#home a:hover{
-  color:#ff2599;
-}
-#works a:hover{
-  color:#009bc6;
-}
-#blog a:hover{
-  color:#ef7c21;
-}
-#contact a:hover{
-  color:#1bca47;
-}
 
 /*読み込み画面(参考サイト：https://projects.lukehaas.me/css-loaders/)
 -------------------------------------------------------------------------------*/
@@ -154,7 +142,7 @@ strong{
   margin-left: -300px;
   padding-top: 40px;
   text-transform: uppercase;
-  z-index: 10;
+  z-index: 999;
   opacity: 0.9;
 }
 
@@ -170,7 +158,9 @@ strong{
 -------------------------------------------------------------------------------*/
 /*ボタン外側*/
 .menu-buttonPos{
-  z-index: 100;
+  z-index: 1000;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .menu-button{
@@ -233,6 +223,7 @@ header{
   justify-content: flex-end;
   background-color: #000;
   height: 60px;
+  z-index: 99;
 }
 
 .header-nav{
@@ -253,23 +244,10 @@ header{
   margin-left: 20px;
 }
 
-#home .header-nav a:hover{
-  color:#ff2599;
-}
-#works .header-nav a:hover{
-  color:#009bc6;
-}
-#blog .header-nav a:hover{
-  color:#ef7c21;
-}
-#contact .header-nav a:hover{
-  color:#1bca47;
-}
 
 /*footer
 -------------------------------------------------------------------------------*/
 .page-footer{
-  margin-top: 200px;
   height: 50px;
   width: 100%;
   background: #000;
@@ -311,7 +289,6 @@ header{
   background-blend-mode: hard-light;
 }
 
-
 .main-word{
   font-family: 'Haettenschweiler';
   text-transform: uppercase;  /*すべての文字を大文字にする*/
@@ -320,6 +297,7 @@ header{
   margin-right: 20px;
   letter-spacing: 0.3rem;
 }
+
 
 /*各ページ共通のもの
 -------------------------------------------------------------------------------*/
@@ -330,24 +308,97 @@ header{
   border-top: 6px solid #000;
   border-bottom: 6px solid #000;
 }
-.index a{
-  color: #000;
+.index li{
   font-size: 60px;
   font-family: "Agency FB";
   text-transform: uppercase;  /*すべての文字を大文字にする*/
   font-weight: bold;
-}
-.index li{
   text-align: center;
 }
+
+/*リンク選択時に線が伸びる描写*/
+.main-nav li a,
+.header-nav li a,
+.index li a{
+  position: relative;
+}
+
+.main-nav li a::after,
+.header-nav li a::after,
+.index li a::after{
+  content: '';
+  position: absolute;   /*hover時アニメーションの基点*/
+  left: -20%;
+  top: 50%;
+
+  /*線のスタイル*/
+  width: 140%;
+  height: 3px;
+  background: #fff;
+
+  /*アニメーションの設定*/
+  transition: all .3s;
+  transform: scale(0,1); /*x方向に0, y方向に1*/
+  transform-origin: center top; /*上部中央を基点に*/
+}
+
+.index li a::after{
+  /*線のスタイル*/
+  height: 4px;
+  background: #000;
+}
+
+.main-nav li a:hover::after,
+.header-nav li a:hover::after,
+.index li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
 
 .topic{
   margin-top: 40px;
   margin-bottom: 150px;
+
+  /*ここからフェードインアニメーションの記述*/
+  opacity: 0;         
+  visibility: hidden;
+	transition: 1.5s;
+  transform: translateY(60px);
 }
 
+.topic-title{
+  font-size: 85px;
+}
+
+.topic.active{
+	opacity: 1;
+	visibility: visible;
+  transform: translateY(0);
+  /*ここまでフェードインアニメーションの記述*/
+}
+
+
+#home .topic a{
+  color: #ff006f;
+}
+#works .topic a{
+  color: #12a9c4;
+}
+#blog .main-content a{
+  color: #e77000;
+}
+#blog .main-content a:hover{
+  color: #ffca99;
+}
+
+
+
 .blank{
-  margin: 200px;
+  height: 150px;
+}
+
+.main-content{
+  z-index: 0;
 }
 
 
@@ -384,6 +435,8 @@ header{
 
 .top-content{
   text-align: center;
+  margin: 0 auto;
+  z-index: 0;
 }
 
 /*ワークス
@@ -394,7 +447,7 @@ header{
 }
 .img-works-gr{
   text-align: center;
-  margin: 40px auto 40px;
+  margin: 20px auto 30px;
 }
 .works-content{
   text-align: center;
@@ -423,23 +476,17 @@ header{
 .blog-contents{
 	display: flex;
 	justify-content: space-between;
-	margin-bottom:100px;
+  margin-left: 20px;
 }
 
-/*記事本文*/
 article{
-	width: 76%
-}
-/*サイドバー*/
-aside{
-	width:24%
+  width: 75%;
+  margin-bottom: 50px;
 }
 
-/*投稿内容*/
 .post-info{
 	position: relative;
 	padding-top: 10px;
-	margin-left: 20px;
 	margin-bottom: 30px;
 	padding: 10px 0;
 	border-top: 2px solid #000;
@@ -478,20 +525,99 @@ aside{
 	margin-left: 110px;
 }
 
+.post-image-wrapper{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.post-body{
+  margin-top: 10px;
+}
+
+.post-body p{
+  font-size: 20px;
+}
+
+.post-image{
+  width: 92%;
+}
+
+.post-footer{
+  margin-top: 60px;
+}
+
+footer .post-cat{
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.post-page{
+  border-top: #000 1px solid;
+  border-bottom: #000 2.5px solid;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-next,
+.post-prev{
+  background-color: #fff;
+  width: 50%;
+  display: block;
+}
+.post-next{
+   padding-left: 40px;
+}
+.post-prev{
+  text-align: right;
+  padding-right: 40px;
+}
+
+.column-line{
+  height: 60px;
+  width: 1px;
+  background-color: #000;
+}
+
+
+aside{
+  font-size: larger;
+  width: 20%;
+  padding-right: 10px;
+  margin-bottom: 50px;
+}
+
+aside h3{
+  background-color: #000;
+  border-radius: 2%;
+  color: #fff;
+  margin-bottom: 15px;
+  padding: 10px 0 10px 10px;
+}
+
+.category li{
+  margin: 5px 0;
+  padding-left: 10px;
+  border-bottom: #000 1px solid;
+}
+
+
+
 /*メディアクエリ
 -------------------------------------------------------------------------------*/
 /*スマホ・タブレット用配置*/
 @media screen and (max-width: 900px){
 
   p{
-    font-size: 12px;
+    font-size: 14px;
   }
   h2{
     font-size: 40px;
   }
 
   .topic{
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 80px;
   }
   .index{
@@ -501,8 +627,17 @@ aside{
     border-bottom: 5px solid #000;
   }
 
-  .index a{
+  .index li{
+    margin : -10%;
+  }
+
+
+  .index li a{
     font-size: 45px;
+  }
+
+  .topic-title{
+    font-size: 60px;
   }
 
 
@@ -523,7 +658,7 @@ aside{
     margin: 0 auto;
   }
   .header-nav a{
-    font-size: 25px;
+    font-size: 30px;
   }
   .header-nav li{
     margin: 0 15px 20px;
@@ -554,7 +689,7 @@ aside{
   
   .main-nav a{
     font-size: 50px;
-    margin-left: 45px;
+    margin-left: 60px;
     margin-top: 30px;
   }  
 
@@ -618,6 +753,10 @@ aside{
     width: 95%;
   }
 
+  .img-works-gr{
+    text-align: center;
+    margin: 10px auto 20px;
+  }
 
   .img-works{
     width: 85%;
@@ -634,17 +773,18 @@ aside{
   /*blog-----------------------------------------*/
   .blog-contents{
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 20px;
+    width: 95%;
   }
 
-article{
-  width: 90%;
-}
+  article{
+  width: 100%;
+  }
 
-aside{
-	width: 90%;
-}
-
+  aside{
+  width: 100%;
+  padding-right: 0;
+  }
 
   .post-date{  
     width: 70px;
@@ -658,5 +798,9 @@ aside{
   .post-date span{
     font-size: 17px;
     border-top: 2px #fff dashed;
+  }
+
+  .post-content p{
+    font-size: 14px;
   }
 }
