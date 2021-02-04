@@ -470,10 +470,6 @@ header{
   width: 830px;
 }
 
-.game-content{
-
-}
-
 .game-wrapper{
   text-align: center;
 }
@@ -840,4 +836,10 @@ aside h3{
   .post-content p{
     font-size: 14px;
   }
+
+  .post-footer p{
+    font-size: 16px;
+  }
+
+
 }
