@@ -634,11 +634,12 @@ aside h3{
   }
 
   .topic{
-    margin-top: 20px;
-    margin-bottom: 80px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
   .index{
     padding: 40px 0;
+    margin-bottom: 20px;
     width: 200px;
     border-top: 5px solid #000;
     border-bottom: 5px solid #000;
